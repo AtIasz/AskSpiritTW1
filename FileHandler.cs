@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace AskSprint1_1.Views
+namespace AskSprint1_1
 {
     public class FileHandler
     {
@@ -14,28 +14,28 @@ namespace AskSprint1_1.Views
         {
             questions = new List<Question>();
             answers = new List<Answer>();
-            QuestionsReader();
-            AnswerReader();
+            //QuestionsReader();
         }
-        private void QuestionsReader()
+        public void QuestionsReader()
         {
             StreamReader sr = new StreamReader("questions.csv");
             while (!sr.EndOfStream)
             {
                 string line = sr.ReadLine();
-                Question q = new Question(line);
+                Question q = new Question();
                 questions.Add(q);
             }
         }
-        private void AnswerReader()
+        public void AnswerReader()
         {
             StreamReader sr = new StreamReader("answers.csv");
             while (!sr.EndOfStream)
             {
                 string line = sr.ReadLine();
-                Answer a = new Answer(line);
+                Answer a = new Answer();
                 answers.Add(a);
             }
         }
+        
     }
 }

@@ -7,10 +7,9 @@ namespace AskSprint1_1
 {
     public class Answer
     {
-        string answer { get; set; }
-        public Answer(string answer)
-        {
-            this.answer = answer;
-        }
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public string Message { get; set; }
+        
     }
 }

@@ -20,13 +20,17 @@ namespace AskSprint1_1.Controllers
             _questionsService = questionService;
             _logger = logger;
         }
-
+        [HttpGet]
         public IActionResult All()
         {
             var questions = _questionsService.GetAll();
             return View(questions);
         }
-
+        public IActionResult Get(int id)
+        {
+            var question = _questionsService.GetOne(id);
+            return View(question);
+        }
         
     }
 }

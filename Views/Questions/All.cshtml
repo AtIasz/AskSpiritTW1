@@ -1,6 +1,18 @@
-﻿@{
+﻿@model List<Question>
+@{
     ViewData["Title"] = "List of Questions";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>QQRIQ</p>
+<ul>
+    @foreach (var q in Model)
+    {
+    <li>
+        <h2>@q.Title</h2>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Questions" asp-action="Get" asp-route-id="@q.ID">Questions</a>
+
+    </li>
+    }
+
+</ul>
+

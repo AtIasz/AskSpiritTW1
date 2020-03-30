@@ -1,0 +1,15 @@
+﻿@model List<Question>
+@{
+    ViewData["Title"] = "Make A New Question";
+}
+<h1>@ViewData["Title"]</h1>
+<form action="/Questions/All">
+    <label for="fname">Title:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Message:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+
+

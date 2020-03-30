@@ -32,5 +32,11 @@ namespace AskSprint1_1.Controllers
             return View(question);
         }
         
+        public IActionResult Add(int id)
+        {
+            var question = _questionsService.AddOne();
+            return View(question);
+        }
+
     }
 }

@@ -13,9 +13,6 @@ namespace AskSprint1_1
     {
         public static void Main(string[] args)
         {
-           // FileHandler fh = new FileHandler();
-           // fh.AnswerReader();
-           // fh.QuestionsReader();
             CreateHostBuilder(args).Build().Run();
         }
 

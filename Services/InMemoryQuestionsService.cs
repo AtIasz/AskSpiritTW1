@@ -24,6 +24,10 @@ namespace AskSprint1_1.Services
             this.ID += 1;
 
         }
+        public int GetId()
+        {
+            return this.ID;
+        }
         public List<Question> GetAll()
         {
             return _questions;
@@ -32,11 +36,11 @@ namespace AskSprint1_1.Services
         {
             return _questions.Where(q => q.ID == id).First();
         }
-        public List<Question> AddOne()
+        public List<Question> AddOne(string title,string message)
         {
             this.ID += 1;
 
-            var question = new Question { ID = ID, Title ="Why are you so hard to learn?", Message = "You are already dedd." };
+            var question = new Question { ID = ID, Title =title, Message =message };
             _questions.Add(question);
             return _questions;
         }

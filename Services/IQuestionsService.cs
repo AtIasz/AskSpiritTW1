@@ -10,6 +10,7 @@ namespace AskSprint1_1.Services
         List<Question> GetAll();
 
         Question GetOne(int id);
-        List<Question> AddOne();
+        List<Question> AddOne(string title,string message);
+        int GetId(); 
     }
 }

@@ -38,11 +38,22 @@ namespace AskSprint1_1.Controllers
             return RedirectToAction("Get", new { id = _questionsService.GetId() });
             
         }
-        //[HttpPost]
         public IActionResult Add()
         {
             return View("Add");
         }
-
+        public IActionResult Delete(int id)
+        {
+            List<Question> questions = _questionsService.GetAll();
+            foreach (var question in questions)
+            {
+                if (question.ID == id)
+                {
+                    questions.Remove(question);
+                    break;
+                }
+            }
+            return Redirect("/Questions/All");
+        }
     }
 }

@@ -8,8 +8,11 @@ namespace AskSprint1_1
     public class Answer
     {
         public int ID { get; set; }
-        public string Title { get; set; }
         public string Message { get; set; }
-        
+        public Answer(int id, string message)
+        {
+            ID = id;
+            Message = message;
+        }
     }
 }

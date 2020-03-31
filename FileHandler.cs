@@ -32,7 +32,7 @@ namespace AskSprint1_1
             while (!sr.EndOfStream)
             {
                 string line = sr.ReadLine();
-                Answer a = new Answer();
+                Answer a = new Answer(1,"");
                 answers.Add(a);
             }
         }

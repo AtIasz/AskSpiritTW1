@@ -8,10 +8,9 @@ namespace AskSprint1_1
 {
     public class Question
     {
-        
         public int ID { get; set; }
         public string Title { get; set; }
         public string Message { get; set; }
-        
+        public List<string> Answers { get; set; }
     }
 }

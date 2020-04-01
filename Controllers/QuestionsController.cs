@@ -57,9 +57,9 @@ namespace AskSprint1_1.Controllers
             }
             return Redirect("/Questions/All");
         }
-        public IActionResult Answer()
+        public IActionResult Answer(int id)
         {
-            var q = _questionsService.GetOne(_questionsService.GetId());
+            var q = _questionsService.GetOne(id);
             return View("new-answer",q);
         }
 

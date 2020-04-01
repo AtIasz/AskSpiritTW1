@@ -5,7 +5,7 @@
 <h1>@Model.Title</h1>
 <h2>Message: @Model.Message</h2>
 <input type="button" value="Delete DIS" onclick="location.href='@Url.Action("Delete", "Questions",new { id = Model.ID })'" />
-<input type="button" value="Answer" onclick="location.href='@Url.Action("Answer", "Questions")'" />
+<input type="button" value="Answer" onclick="location.href='@Url.Action("Answer", "Questions", new {id = Model.ID })'" />
 <br />
 <br />
 @if (Model.Answers.Count>0)

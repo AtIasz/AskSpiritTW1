@@ -1,0 +1,14 @@
+﻿@model Question
+@{
+    ViewData["Title"] = "Answer for ";
+}
+<h1>@ViewData["Title"]</h1>
+@using (Html.BeginForm("Add1Answer", "Questions", FormMethod.Post))
+{
+    <input type="text" name="AnswerFromCSHTML" id="answer" />
+    
+    <input type="submit" value="Submit" />
+}
+
+
+

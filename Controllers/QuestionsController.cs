@@ -55,5 +55,11 @@ namespace AskSprint1_1.Controllers
             }
             return Redirect("/Questions/All");
         }
+        public IActionResult Add1Answer(int id)
+        {
+            return View($"new-answer");
+            //return Redirect($"/Questions/Get/{id}");
+        }
+        
     }
 }

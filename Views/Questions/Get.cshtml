@@ -6,3 +6,16 @@
 <h2>ID: @Model.ID</h2>
 <h2>Message: @Model.Message</h2>
 <input type="button" value="Delete DIS" onclick="location.href='@Url.Action("Delete", "Questions",new { id = Model.ID })'" />
+<input type="button" value="Answer" onclick="location.href='@Url.Action("Add1Answer", "Questions",new { id = Model.ID })'" />
+<br />
+<br />
+@if (Model.Answers.Count>0)
+{
+    <h3>Answers so far:</h3>
+    @foreach (var a in Model.Answers)
+    {
+        <ul>
+            <li>@a</li>
+        </ul>
+    }
+}

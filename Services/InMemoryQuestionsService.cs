@@ -16,12 +16,20 @@ namespace AskSprint1_1.Services
         private int ID = 0;
         public InMemoryQuestionsService()
         {
-            _questions.Add(new Question { ID = ID+1, Title = "How smol is ur PP?", Message = "I wonder if that's visible at all..." });
+            List<string> empty = new List<string>();
+            empty.Add("gyász");
+            empty.Add("valami");
+            empty.Add("ami talán már menni fog");
+
+            Question q = new Question(ID + 1, "How smol is ur PP?", "I wonder if that's visible at all...",empty);
+            _questions.Add(q);
             this.ID += 1;
-            _questions.Add(new Question { ID = ID + 1, Title = "How high is Wiz Khalifa?", Message = "Could he be up in the mountains right now?" });
+            q = new Question(ID + 1, "How high is Wiz Khalifa?", "Could he be up in the mountains right now?");
+            _questions.Add(q);
             this.ID += 1;
-            _questions.Add(new Question { ID = ID + 1, Title = "Is this a loss?", Message = "I II II I _" });
+            q = new Question(ID + 1,"Is this a loss?","I II II I _" );
             this.ID += 1;
+            _questions.Add(q);
 
         }
         public int GetId()
@@ -40,10 +48,33 @@ namespace AskSprint1_1.Services
         {
             this.ID += 1;
 
-            var question = new Question { ID = ID, Title =title, Message =message };
+            var question = new Question (ID,title,message );
             _questions.Add(question);
             return _questions;
         }
-        
+        public List<Question> Add1Answer(int id, string message="Valami")
+        {
+            foreach (var q in _questions)
+            {
+                if (q.ID==id)
+                {
+                    q.Answers.Add(message);
+                }
+            }
+            return _questions;
+        }
+        public int NumberOfAnswers(int id)
+        {
+            List<Question> questions = _questions;
+            int length = 0;
+            for (int i = 0; i < questions.Count; i++)
+            {
+                if (questions[i].ID == id && questions[i].Answers.Count > 0)
+                {
+                    length = questions[i].Answers.Count;
+                }
+            }
+            return length;
+        }
     }
 }

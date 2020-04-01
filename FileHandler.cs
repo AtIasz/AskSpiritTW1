@@ -16,7 +16,7 @@ namespace AskSprint1_1
             answers = new List<Answer>();
             //QuestionsReader();
         }
-        public void QuestionsReader()
+       /* public void QuestionsReader()
         {
             StreamReader sr = new StreamReader("questions.csv");
             while (!sr.EndOfStream)
@@ -26,6 +26,7 @@ namespace AskSprint1_1
                 questions.Add(q);
             }
         }
+        */
         public void AnswerReader()
         {
             StreamReader sr = new StreamReader("answers.csv");

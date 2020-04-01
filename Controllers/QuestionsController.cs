@@ -55,10 +55,23 @@ namespace AskSprint1_1.Controllers
             }
             return Redirect("/Questions/All");
         }
-        public IActionResult Add1Answer(int id)
+        public IActionResult Answer()
         {
-            return View($"new-answer");
-            //return Redirect($"/Questions/Get/{id}");
+            return View("new-answer");
+        }
+        public IActionResult Add1Answer(int id, string answer)
+        {
+            List<Question> questions = _questionsService.GetAll();
+            foreach (var question in questions)
+            {
+                if(question.ID == id)
+                {
+                    question.Answers.Add(answer);
+                    break;
+                }
+            }
+            //return View($"new-answer");
+            return Redirect($"/Questions/All");
         }
         
     }

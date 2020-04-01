@@ -1,9 +1,8 @@
-﻿@model Question
+﻿@model AskSprint1_1.Question
 @{
-    ViewData["Title"] = Model.Title;
+    ViewData["Title"] = "Question";
 }
-<h1>@ViewData["Title"]</h1>
-<h2>ID: @Model.ID</h2>
+<h1>@Model.Title</h1>
 <h2>Message: @Model.Message</h2>
 <input type="button" value="Delete DIS" onclick="location.href='@Url.Action("Delete", "Questions",new { id = Model.ID })'" />
 <input type="button" value="Answer" onclick="location.href='@Url.Action("Answer", "Questions")'" />

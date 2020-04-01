@@ -52,7 +52,7 @@ namespace AskSprint1_1.Services
             _questions.Add(question);
             return _questions;
         }
-        public List<Question> Add1Answer(int id, string message="Valami")
+        public List<Question> Add1Answer(int id, string message)
         {
             foreach (var q in _questions)
             {
@@ -63,18 +63,7 @@ namespace AskSprint1_1.Services
             }
             return _questions;
         }
-        public int NumberOfAnswers(int id)
-        {
-            List<Question> questions = _questions;
-            int length = 0;
-            for (int i = 0; i < questions.Count; i++)
-            {
-                if (questions[i].ID == id && questions[i].Answers.Count > 0)
-                {
-                    length = questions[i].Answers.Count;
-                }
-            }
-            return length;
-        }
+        
+       
     }
 }

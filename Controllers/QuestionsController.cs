@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AskSprint1_1.Models;
 using AskSprint1_1.Services;
+using System.Web;
+using System.Net;
 
 namespace AskSprint1_1.Controllers
 {
@@ -57,9 +59,14 @@ namespace AskSprint1_1.Controllers
         }
         public IActionResult Answer()
         {
-            return View("new-answer");
+            var q = _questionsService.GetOne(_questionsService.GetId());
+            return View("new-answer",q);
         }
-        public IActionResult Add1Answer(int id, string answer)
+
+
+
+
+        public IActionResult Add1Answer(int id,string answer)
         {
             List<Question> questions = _questionsService.GetAll();
             foreach (var question in questions)

@@ -17,12 +17,9 @@
         <ul>
             <li>@a </li>
 
-            <input type="button" value="Remove Answer" onclick="location.href='@Url.Action("DeleteThisAnswer", "Questions", new {answer = a,ID = Model.ID})'" />
+            <input type="button" value="Remove Answer" onclick="location.href =
+        '@Url.Action("DeleteThisAnswer", "Questions", new {answer = a,ID = Model.ID})'" />
 
         </ul>
     }
 }
-
-<!--<link rel="stylesheet" type="text/css" href="KUKAC_Url.Content("~/Content/theme4firstSI.css")" media="screen" />-->
-<!--<link rel="stylesheet" type="text/css" href="theme4firstSI.css"> -->
-<!---Ez még egy ötlet, 'x' a sor végén: -https://www.w3schools.com/howto/howto_js_close_list_items.asp-->

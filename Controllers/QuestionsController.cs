@@ -77,9 +77,21 @@ namespace AskSprint1_1.Controllers
                     break;
                 }
             }
-            //return View($"new-answer");
             return Redirect($"/Questions/All");
         }
         
+        public IActionResult DeleteThisAnswer(string answer, int id)
+        {
+            List<Question> questions = _questionsService.GetAll();
+            foreach (var question in questions)
+            {
+                if (question.ID == id)
+                {
+                    question.Answers.Remove(answer);
+                    break;
+                }
+            }
+            return Redirect($"/Questions/All");
+        }
     }
 }

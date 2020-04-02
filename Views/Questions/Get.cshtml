@@ -8,13 +8,21 @@
 <input type="button" value="Answer" onclick="location.href='@Url.Action("Answer", "Questions", new {id = Model.ID })'" />
 <br />
 <br />
-@if (Model.Answers.Count>0)
+
+@if (Model.Answers.Count > 0)
 {
     <h3>Answers so far:</h3>
     @foreach (var a in Model.Answers)
     {
         <ul>
-            <li>@a</li>
+            <li>@a </li>
+
+            <input type="button" value="Remove Answer" onclick="location.href='@Url.Action("DeleteThisAnswer", "Questions", new {answer = a,ID = Model.ID})'" />
+
         </ul>
     }
 }
+
+<!--<link rel="stylesheet" type="text/css" href="KUKAC_Url.Content("~/Content/theme4firstSI.css")" media="screen" />-->
+<!--<link rel="stylesheet" type="text/css" href="theme4firstSI.css"> -->
+<!---Ez még egy ötlet, 'x' a sor végén: -https://www.w3schools.com/howto/howto_js_close_list_items.asp-->
